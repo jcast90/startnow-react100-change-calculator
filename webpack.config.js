@@ -1,6 +1,7 @@
 const path = require('path');
 
 module.exports = {
+  devtool: 'source-maps',
   context: path.join(__dirname, '/src'),
 
   entry: {
@@ -9,7 +10,7 @@ module.exports = {
 
   output: {
     filename: 'bundle.js',
-    path: path.join(__dirname, '/dist'),
+    path: path.join(__dirname, '/dist')
   },
 
   resolve: {
@@ -24,12 +25,12 @@ module.exports = {
       {
         test: /\.jsx?$/,
         exclude: /node_modules/,
-        loaders: ['babel-loader'],
+        loaders: ['babel-loader']
       },
       {
         test: /\.html$/,
-        loader: 'file?name=[name].[ext]',
-      },
-    ],
-  },
+        loader: 'file?name=[name].[ext]'
+      }
+    ]
+  }
 };
